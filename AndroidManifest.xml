@@ -7,7 +7,6 @@
     <uses-sdk android:minSdkVersion="12" />
     <compatible-screens>
         <screen android:screenDensity="xhdpi"/>
-        <screen android:screenDensity="tvdpi"/>
     </compatible-screens>
 
     <application

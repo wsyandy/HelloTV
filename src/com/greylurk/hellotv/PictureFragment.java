@@ -1,6 +1,5 @@
 package com.greylurk.hellotv;
 
-import android.R;
 import android.app.Fragment;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,9 +27,15 @@ public class PictureFragment extends Fragment {
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
     	View v = inflater.inflate( R.layout.details , container, false);
-    	Uri u = Uri.parse( savedInstanceState.getString( "src" ) );
+    	Uri u;
     	ImageView image = (ImageView)v.findViewById( R.id.image );
-    	image.setImageURI( u );
+    	try {
+    		u = Uri.parse( savedInstanceState.getString( "src" ) );
+	    	image.setImageURI( u );
+    	} catch ( NullPointerException e ) {
+    		image.setImageResource( R.drawable.scorpion_in_sand );
+    	}
+    	return v;
     }
     
     @Override
