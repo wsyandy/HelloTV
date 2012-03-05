@@ -7,6 +7,7 @@ public class HelloTVActivity extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	super.setTheme(android.R.style.Theme_Holo_NoActionBar_Fullscreen);
         super.onCreate(savedInstanceState);
         setContentView( R.layout.main );
     }
